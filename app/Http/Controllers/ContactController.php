@@ -2,19 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Contact;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactFormSubmission;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class ContactController extends Controller
 {
-    public function index()
+    /**
+     * Display the contact form.
+     *
+     * @return View
+     */
+    public function index(): View
     {
         return view('contact');
     }
 
-    public function store(Request $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Request  $request
+     * @return RedirectResponse
+     */
+    public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'name' => 'required|string|max:100',
@@ -23,13 +34,11 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        // Ruaj mesazhin në databazë
-        $contact = Contact::create($validated);
+        $validated['is_read'] = false;
 
-        // Dërgo email (opsionale - mund ta konfigurosh më vonë)
-        // Mail::to('info@ujipuka.com')->send(new ContactFormSubmission($contact));
+        Contact::create($validated);
 
         return redirect()->route('contact.index')
-            ->with('success', 'Mesazhi juaj u dërgua me sukses!');
+            ->with('success', 'Mesazhi juaj u dërgua me sukses! Do ju kontaktojmë së shpejti.');
     }
 }

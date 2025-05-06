@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a href="#" class="text-white text-decoration-none">Shiko detajet</a>
+                <a href="{{ route('admin.contacts.index') }}" class="text-white text-decoration-none">Shiko detajet</a>
                 <i class="fas fa-arrow-right text-white"></i>
             </div>
         </div>
@@ -78,10 +78,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach(\App\Models\Announcement::latest()->take(5)->get() as $announcement)
+                            @foreach($latestAnnouncements as $announcement)
                             <tr>
                                 <td>{{ Str::limit($announcement->title, 40) }}</td>
-                                <td>{{ $announcement->published_at->format('d M Y') }}</td>
+                                <td>{{ $announcement->published_at ? $announcement->published_at->format('d M Y') : 'Pa publikuar' }}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -108,7 +108,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach(\App\Models\Contact::latest()->take(5)->get() as $contact)
+                            @foreach($latestContacts as $contact)
                             <tr>
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ Str::limit($contact->subject, 30) }}</td>

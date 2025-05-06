@@ -12,15 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            ServicesSeeder::class,
-            AnnouncementsSeeder::class,
-        ]);
-
-        // Krijo një përdorues admin
-        \App\Models\User::factory()->create([
-            'name' => 'Administrator',
-            'email' => 'admin@ujipuka.com',
-            'password' => bcrypt('password'),
+            AdminUserSeeder::class,
         ]);
     }
 }

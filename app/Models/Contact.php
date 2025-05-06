@@ -9,6 +9,11 @@ class Contact extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'name',
         'email',
@@ -17,6 +22,11 @@ class Contact extends Model
         'is_read',
     ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
     protected $casts = [
         'is_read' => 'boolean',
     ];

@@ -15,7 +15,7 @@ class AdminAnnouncementController extends Controller
 
     public function index()
     {
-        $announcements = Announcement::latest()->get();
+        $announcements = Announcement::paginate(10);
         return view('admin.announcements.index', compact('announcements'));
     }
 

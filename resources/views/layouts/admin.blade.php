@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sq">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,39 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <style>
+        /* Full height sidebar styles */
+        body, html {
+            height: 100%;
+        }
+        #sidebar {
+            min-height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 100;
+            padding: 0;
+        }
+        #sidebar .position-sticky {
+            height: 100vh;
+            overflow-y: auto;
+        }
+        main {
+            margin-left: 16.666667%; /* This matches the col-md-2 width */
+        }
+
+        @media (max-width: 767.98px) {
+            #sidebar {
+                position: static;
+                height: auto;
+                min-height: auto;
+            }
+            main {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
