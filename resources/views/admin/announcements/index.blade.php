@@ -39,27 +39,29 @@
                             <td>{{ Str::limit($announcement->content, 100) }}</td>
                             <td>
                                 @if($announcement->image)
-                                    <img src="{{ asset('storage/' . $announcement->image) }}" height="50">
-                                @else
-                                    Pa imazh
-                                @endif
+                                <img src="{{ asset('storage/' . $announcement->image) }}" alt="{{ $announcement->title }}" class="img-thumbnail" style="max-width: 100px;">
+                            @else
+                                Pa imazh
+                            @endif
                             </td>
                             <td>{{ $announcement->published_at ? $announcement->published_at->format('d M Y') : 'Pa publikuar' }}</td>
                             <td>
-                                <a href="{{ route('admin.announcements.show', $announcement->id) }}" class="btn btn-info btn-sm">
-                                    <i class="fas fa-eye"></i> Shiko
-                                </a>
-                                <a href="{{ route('admin.announcements.edit', $announcement->id) }}" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-edit"></i> Ndrysho
-                                </a>
-                                <form action="{{ route('admin.announcements.destroy', $announcement->id) }}" method="POST" class="d-inline"
-                                      onsubmit="return confirm('A jeni i sigurt që dëshironi të fshini këtë njoftim?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash"></i> Fshi
-                                    </button>
-                                </form>
+                                <div class="d-flex gap-2">
+                                    <a href="{{ route('admin.announcements.show', $announcement->id) }}" class="btn btn-info btn-sm">
+                                        <i class="fas fa-eye"></i> Shiko
+                                    </a>
+                                    <a href="{{ route('admin.announcements.edit', $announcement->id) }}" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-edit"></i> Ndrysho
+                                    </a>
+                                    <form action="{{ route('admin.announcements.destroy', $announcement->id) }}" method="POST"
+                                          onsubmit="return confirm('A jeni i sigurt që dëshironi të fshini këtë njoftim?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i> Fshi
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

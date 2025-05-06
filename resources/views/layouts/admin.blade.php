@@ -23,6 +23,7 @@
             bottom: 0;
             z-index: 100;
             padding: 0;
+            background-color: #212529;
         }
         #sidebar .position-sticky {
             height: 100vh;
@@ -30,6 +31,32 @@
         }
         main {
             margin-left: 16.666667%; /* This matches the col-md-2 width */
+        }
+
+        /* Sidebar links styling */
+        #sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            padding: 0.75rem 1.25rem;
+            border-radius: 0;
+            transition: all 0.3s;
+        }
+
+        #sidebar .nav-link:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #sidebar .nav-link.active {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.2);
+            font-weight: 500;
+        }
+
+        /* User section */
+        .user-section {
+            padding: 1rem 1.25rem;
+            color: #fff;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @media (max-width: 767.98px) {
@@ -48,7 +75,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <div class="position-sticky pt-3">
                     <div class="text-center mb-4">
                         <a href="{{ route('admin.dashboard') }}">
@@ -72,31 +99,32 @@
                                 <i class="fas fa-bullhorn me-2"></i> Njoftimet
                             </a>
                         </li>
-                        <li class="nav-item mt-3">
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}" href="{{ route('admin.contacts.index') }}">
+                                <i class="fas fa-envelope me-2"></i> Mesazhet
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}" target="_blank">
                                 <i class="fas fa-external-link-alt me-2"></i> Vizito faqen
                             </a>
                         </li>
                     </ul>
 
-                    <hr class="text-light">
-
-                    <div class="dropdown pb-3">
-                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                    <!-- User section with direct logout button -->
+                    <div class="user-section mt-auto">
+                        <div class="d-flex align-items-center mb-2">
                             <i class="fas fa-user-circle fs-4 me-2"></i>
                             <span>{{ Auth::user()->name }}</span>
+                        </div>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                           class="btn btn-outline-light btn-sm w-100">
+                            <i class="fas fa-sign-out-alt me-2"></i> Dilni
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser">
-                            <li>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="fas fa-sign-out-alt me-2"></i> Dilni
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </nav>

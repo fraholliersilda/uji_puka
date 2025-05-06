@@ -5,7 +5,7 @@
 @section('header', 'Menaxho Mesazhet')
 
 @section('content')
-<div class="card">
+<div class="card shadow mb-4">
     <div class="card-body">
         @if($contacts->count() > 0)
         <div class="table-responsive">
@@ -18,7 +18,7 @@
                         <th>Subjekti</th>
                         <th>Statusi</th>
                         <th>Data</th>
-                        <th width="150">Veprime</th>
+                        <th width="170">Veprime</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,16 +37,19 @@
                         </td>
                         <td>{{ $contact->created_at->format('d M Y H:i') }}</td>
                         <td>
-                            <a href="{{ route('admin.contacts.show', $contact->id) }}" class="btn btn-sm btn-info">
-                                <i class="fas fa-eye"></i> Shiko
-                            </a>
-                            <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Jeni i sigurt që dëshironi të fshini këtë mesazh?')">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </form>
+                            <div class="d-flex gap-2">
+                                <a href="{{ route('admin.contacts.show', $contact->id) }}" class="btn btn-sm btn-info">
+                                    <i class="fas fa-eye"></i> Shiko
+                                </a>
+                                <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Jeni i sigurt që dëshironi të fshini këtë mesazh?')">
+                                        <i class="fas fa-trash-alt"></i> Fshi
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                     @endforeach

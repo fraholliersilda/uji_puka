@@ -13,7 +13,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('admin.services.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.services.store') }}" method="POST">
             @csrf
             <div class="row">
                 <div class="col-md-8">
@@ -45,15 +45,6 @@
                             <a href="https://fontawesome.com/icons" target="_blank">Zgjidhni një ikonë nga Font Awesome</a>
                         </div>
                         @error('icon')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="image" class="form-label">Imazhi</label>
-                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
-                        <div class="form-text">Opsionale. Formatet e lejuara: JPEG, PNG, JPG, GIF. Max: 2MB.</div>
-                        @error('image')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>

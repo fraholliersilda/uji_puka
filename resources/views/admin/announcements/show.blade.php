@@ -77,7 +77,7 @@
             </div>
             @endif
 
-            <div class="card mt-4">
+            <div class="card mt-4 mb-2">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <a href="{{ route('admin.announcements.edit', $announcement->id) }}" class="btn btn-primary">

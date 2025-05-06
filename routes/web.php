@@ -45,16 +45,16 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/services', [AdminServiceController::class, 'index'])->name('services.index');
     Route::get('/services/create', [AdminServiceController::class, 'create'])->name('services.create');
     Route::post('/services', [AdminServiceController::class, 'store'])->name('services.store');
+    Route::get('/services/{id}', [AdminServiceController::class, 'show'])->name('services.show'); // Added show route
     Route::get('/services/{id}/edit', [AdminServiceController::class, 'edit'])->name('services.edit');
     Route::put('/services/{id}', [AdminServiceController::class, 'update'])->name('services.update');
     Route::delete('/services/{id}', [AdminServiceController::class, 'destroy'])->name('services.destroy');
 
     // Admin Announcements
-    // Admin Announcements
     Route::get('/announcements', [AdminAnnouncementController::class, 'index'])->name('announcements.index');
     Route::get('/announcements/create', [AdminAnnouncementController::class, 'create'])->name('announcements.create');
     Route::post('/announcements', [AdminAnnouncementController::class, 'store'])->name('announcements.store');
-    Route::get('/announcements/{id}', [AdminAnnouncementController::class, 'show'])->name('announcements.show'); // Add this missing route
+    Route::get('/announcements/{id}', [AdminAnnouncementController::class, 'show'])->name('announcements.show');
     Route::get('/announcements/{id}/edit', [AdminAnnouncementController::class, 'edit'])->name('announcements.edit');
     Route::put('/announcements/{id}', [AdminAnnouncementController::class, 'update'])->name('announcements.update');
     Route::delete('/announcements/{id}', [AdminAnnouncementController::class, 'destroy'])->name('announcements.destroy');

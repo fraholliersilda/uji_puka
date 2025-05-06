@@ -30,18 +30,18 @@ class AdminServiceController extends Controller
             'title' => 'required|string|max:100',
             'description' => 'required|string',
             'icon' => 'nullable|string|max:50',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('services', 'public');
-            $validated['image'] = $imagePath;
-        }
 
         Service::create($validated);
 
         return redirect()->route('admin.services.index')
             ->with('success', 'Shërbimi u krijua me sukses!');
+    }
+
+    public function show($id)
+    {
+        $service = Service::findOrFail($id);
+        return view('admin.services.show', compact('service'));
     }
 
     public function edit($id)
@@ -58,13 +58,7 @@ class AdminServiceController extends Controller
             'title' => 'required|string|max:100',
             'description' => 'required|string',
             'icon' => 'nullable|string|max:50',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('services', 'public');
-            $validated['image'] = $imagePath;
-        }
 
         $service->update($validated);
 
