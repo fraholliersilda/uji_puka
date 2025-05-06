@@ -19,6 +19,12 @@ class AdminAnnouncementController extends Controller
         return view('admin.announcements.index', compact('announcements'));
     }
 
+    public function show($id)
+{
+    $announcement = Announcement::findOrFail($id);
+    return view('admin.announcements.show', compact('announcement'));
+}
+
     public function create()
     {
         return view('admin.announcements.create');

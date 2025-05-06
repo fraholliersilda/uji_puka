@@ -19,7 +19,9 @@
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a href="{{ route('admin.services.index') }}" class="text-white text-decoration-none">Shiko detajet</a>
-                <i class="fas fa-arrow-right text-white"></i>
+                <a href="{{ route('admin.services.index') }}" class="text-white">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -37,7 +39,9 @@
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a href="{{ route('admin.announcements.index') }}" class="text-white text-decoration-none">Shiko detajet</a>
-                <i class="fas fa-arrow-right text-white"></i>
+                <a href="{{ route('admin.announcements.index') }}" class="text-white">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -55,7 +59,9 @@
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
                 <a href="{{ route('admin.contacts.index') }}" class="text-white text-decoration-none">Shiko detajet</a>
-                <i class="fas fa-arrow-right text-white"></i>
+                <a href="{{ route('admin.contacts.index') }}" class="text-white">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -79,7 +85,7 @@
                         </thead>
                         <tbody>
                             @foreach($latestAnnouncements as $announcement)
-                            <tr>
+                            <tr class="cursor-pointer" onclick="window.location='{{ route('admin.announcements.show', $announcement->id) }}'">
                                 <td>{{ Str::limit($announcement->title, 40) }}</td>
                                 <td>{{ $announcement->published_at ? $announcement->published_at->format('d M Y') : 'Pa publikuar' }}</td>
                             </tr>
@@ -109,7 +115,7 @@
                         </thead>
                         <tbody>
                             @foreach($latestContacts as $contact)
-                            <tr>
+                            <tr class="cursor-pointer" onclick="window.location='{{ route('admin.contacts.show', $contact->id) }}'">
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ Str::limit($contact->subject, 30) }}</td>
                                 <td>{{ $contact->created_at->format('d M Y') }}</td>
@@ -122,4 +128,13 @@
         </div>
     </div>
 </div>
+
+<style>
+    .cursor-pointer {
+        cursor: pointer;
+    }
+    .cursor-pointer:hover {
+        background-color: #f8f9fa;
+    }
+</style>
 @endsection

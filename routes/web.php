@@ -50,9 +50,11 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::delete('/services/{id}', [AdminServiceController::class, 'destroy'])->name('services.destroy');
 
     // Admin Announcements
+    // Admin Announcements
     Route::get('/announcements', [AdminAnnouncementController::class, 'index'])->name('announcements.index');
     Route::get('/announcements/create', [AdminAnnouncementController::class, 'create'])->name('announcements.create');
     Route::post('/announcements', [AdminAnnouncementController::class, 'store'])->name('announcements.store');
+    Route::get('/announcements/{id}', [AdminAnnouncementController::class, 'show'])->name('announcements.show'); // Add this missing route
     Route::get('/announcements/{id}/edit', [AdminAnnouncementController::class, 'edit'])->name('announcements.edit');
     Route::put('/announcements/{id}', [AdminAnnouncementController::class, 'update'])->name('announcements.update');
     Route::delete('/announcements/{id}', [AdminAnnouncementController::class, 'destroy'])->name('announcements.destroy');
