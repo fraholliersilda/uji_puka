@@ -19,10 +19,6 @@
                     <i class="far fa-calendar-alt me-1"></i> {{ $announcement->published_at->format('d M Y') }}
                 </p>
 
-                @if($announcement->image)
-                <img src="{{ asset('storage/' . $announcement->image) }}" class="img-fluid rounded mb-4" alt="{{ $announcement->title }}">
-                @endif
-
                 <div class="announcement-content">
                     <p>{!! nl2br(e($announcement->content)) !!}</p>
                 </div>

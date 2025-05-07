@@ -65,18 +65,6 @@
 
             </div>
 
-            @if($announcement->image)
-            <div class="card mt-4">
-                <div class="card-header">
-                    <h6 class="m-0 font-weight-bold">Imazhi</h6>
-                </div>
-                <div class="card-body text-center">
-                    <img src="{{ asset('storage/' . $announcement->image) }}" alt="{{ $announcement->title }}"
-                         class="img-fluid rounded" style="max-height: 300px;">
-                </div>
-            </div>
-            @endif
-
             <div class="card mt-4 mb-2">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">

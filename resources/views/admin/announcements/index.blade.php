@@ -26,7 +26,6 @@
                             <th>#</th>
                             <th>Titulli</th>
                             <th>Përmbajtja</th>
-                            <th>Imazhi</th>
                             <th>Data e publikimit</th>
                             <th>Veprime</th>
                         </tr>
@@ -37,13 +36,6 @@
                             <td>{{ $announcement->id }}</td>
                             <td>{{ $announcement->title }}</td>
                             <td>{{ Str::limit($announcement->content, 100) }}</td>
-                            <td>
-                                @if($announcement->image)
-                                <img src="{{ asset('storage/' . $announcement->image) }}" alt="{{ $announcement->title }}" class="img-thumbnail" style="max-width: 100px;">
-                            @else
-                                Pa imazh
-                            @endif
-                            </td>
                             <td>{{ $announcement->published_at ? $announcement->published_at->format('d M Y') : 'Pa publikuar' }}</td>
                             <td>
                                 <div class="d-flex gap-2">

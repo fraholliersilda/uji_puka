@@ -23,7 +23,7 @@
 
     <!-- Content -->
     <div class="container position-relative z-1 text-white d-flex flex-column justify-content-center align-items-center h-100">
-        <h1 class="display-4 fw-bold">Me dashurinë e ëmbël të nënës natyrë!</h1>
+        <h1 class="display-4 fw-bold">Me dashurinë e ëmbël të nënës natyrë!</h1>
         <p class="lead">Ujë i pastër dhe cilësor për gjithë komunitetin</p>
         <div class="mt-4">
             <a href="{{ route('about') }}" class="btn btn-light btn-lg me-2">Mëso më shumë</a>
@@ -64,7 +64,6 @@
         </div>
     </section>
 
-    <!-- Announcements Section -->
 <!-- Announcements Section -->
 <section class="py-5 bg-light">
     <div class="container">
@@ -77,14 +76,6 @@
             @foreach($announcements as $announcement)
             <div class="col-md-4 mb-4">
                 <div class="card announcement-card h-100 shadow-sm border-0">
-                    @if($announcement->image)
-                    <div class="ratio ratio-16x9">
-                        <img src="{{ asset('storage/' . $announcement->image) }}"
-                             class="card-img-top rounded-top object-fit-cover"
-                             alt="{{ $announcement->title }}"
-                             style="object-fit: cover;">
-                    </div>
-                    @endif
                     <div class="card-body">
                         <h5 class="card-title">{{ $announcement->title }}</h5>
                         <p class="card-text text-muted">{{ Str::limit($announcement->content, 100) }}</p>

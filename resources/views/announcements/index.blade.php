@@ -19,11 +19,6 @@
                     @foreach($announcements as $announcement)
                     <div class="col-md-6 mb-4">
                         <div class="card announcement-card h-100 shadow-sm border-0 overflow-hidden">
-                            @if($announcement->image)
-                            <div class="announcement-image-container">
-                                <img src="{{ asset('storage/' . $announcement->image) }}" class="card-img-top announcement-image" alt="{{ $announcement->title }}">
-                            </div>
-                            @endif
                             <div class="card-body">
                                 <h5 class="card-title fw-bold">{{ $announcement->title }}</h5>
                                 <p class="text-muted small mb-3">
@@ -59,21 +54,6 @@
 .announcement-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Image container with fixed height */
-.announcement-image-container {
-    height: 220px;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Image styling */
-.announcement-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
 }
 
 /* Pagination styling */

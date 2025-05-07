@@ -14,7 +14,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('admin.announcements.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.announcements.store') }}" method="POST">
             @csrf
             <div class="row">
                 <div class="col-md-8">
@@ -45,19 +45,6 @@
                         <input type="date" name="published_at" id="published_at" class="form-control @error('published_at') is-invalid @enderror" value="{{ old('published_at', date('Y-m-d')) }}">
                         <small class="form-text text-muted">Lëreni bosh për të mos publikuar ende</small>
                         @error('published_at')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label for="image">Imazhi</label>
-                        <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
-                        <small class="form-text text-muted">
-                            Opsionale. Formatet e lejuara: JPEG, PNG, JPG, GIF. Max: 2MB.
-                        </small>
-                        @error('image')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
