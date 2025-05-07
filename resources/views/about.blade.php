@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row align-items-center mb-5">
                 <div class="col-md-6 mb-4 mb-md-0">
-                    <img src="{{ asset('images/about-us.jpg') }}" class="img-fluid about-image" alt="Uji Puka">
+                    <img src="{{ asset('images/about-company.jpg') }}" class="img-fluid about-image" alt="Uji Puka">
                 </div>
                 <div class="col-md-6">
                     <h2 class="mb-4">Historia Jonë</h2>

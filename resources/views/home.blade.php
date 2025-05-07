@@ -5,18 +5,16 @@
 @section('content')
     <!-- Hero Section -->
  <!-- Hero Section -->
-<section class="hero2 text-center position-relative overflow-hidden" style="height: 100vh;">
+<section class="hero2 text-center position-relative overflow-hidden" style="height: 60vh;">
     <!-- YouTube Video Background -->
-    <div id="video-background" class="position-absolute top-0 start-0 w-100 h-100 z-n1">
-        <iframe
-            src="https://www.youtube.com/embed/F67CPUVXKXA?autoplay=1&mute=1&controls=0&loop=1&playlist=F67CPUVXKXA&modestbranding=1&rel=0&showinfo=0"
-            frameborder="0"
-            allow="autoplay; fullscreen"
-            allowfullscreen
-            class="w-100 h-100"
-            style="pointer-events: none; object-fit: cover;">
-        </iframe>
-    </div>
+<!-- Self-hosted Video Background -->
+<div id="video-background" class="position-absolute top-0 start-0 w-100 h-100 z-n1">
+    <video autoplay muted loop playsinline class="w-100 h-100" style="object-fit: cover;" poster="{{ asset('images/fallback.jpg') }}">
+        <source src="{{ asset('videos/uje_puka.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
 
     <!-- Dark overlay to improve text readability -->
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 z-0" ></div>

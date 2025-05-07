@@ -50,9 +50,6 @@
             </div>
 
             <div>
-                <a href="mailto:{{ $contact->email }}" class="btn btn-primary">
-                    <i class="fas fa-reply me-1"></i> Përgjigju
-                </a>
                 <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')

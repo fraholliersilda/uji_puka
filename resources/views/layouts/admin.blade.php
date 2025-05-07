@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title') - Admin Panel | Uji Puka</title>
+    <title>@yield('title')</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <style>
         /* Full height sidebar styles */
         body, html {
@@ -30,7 +29,7 @@
             overflow-y: auto;
         }
         main {
-            margin-left: 16.666667%; /* This matches the col-md-2 width */
+            margin-left: 16.666667%; 
         }
 
         /* Sidebar links styling */

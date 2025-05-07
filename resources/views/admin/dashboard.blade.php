@@ -110,14 +110,22 @@
                             <tr>
                                 <th>Emri</th>
                                 <th>Subjekti</th>
+                                <th>Statusi</th>
                                 <th>Data</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($latestContacts as $contact)
-                            <tr class="cursor-pointer" onclick="window.location='{{ route('admin.contacts.show', $contact->id) }}'">
+                            <tr class="cursor-pointer {{ $contact->is_read ? '' : 'table-light fw-bold' }}" onclick="window.location='{{ route('admin.contacts.show', $contact->id) }}'">
                                 <td>{{ $contact->name }}</td>
                                 <td>{{ Str::limit($contact->subject, 30) }}</td>
+                                <td>
+                                    @if($contact->is_read)
+                                        <span class="badge bg-success">Lexuar</span>
+                                    @else
+                                        <span class="badge bg-warning text-dark">Pa lexuar</span>
+                                    @endif
+                                </td>
                                 <td>{{ $contact->created_at->format('d M Y') }}</td>
                             </tr>
                             @endforeach

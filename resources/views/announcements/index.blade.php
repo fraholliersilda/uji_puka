@@ -4,10 +4,10 @@
 
 @section('content')
     <!-- Announcements Hero Section -->
-    <section class="hero text-center py-5 bg-light">
+    <section class="hero text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Njoftimet</h1>
-            <p class="lead text-muted">Informacione të rëndësishme për komunitetin</p>
+            <p class="lead">Informacione të rëndësishme për komunitetin</p>
         </div>
     </section>
 

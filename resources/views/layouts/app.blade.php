@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title') - Uji Puka</title>
+    <title>@yield('title')</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
+
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -71,9 +73,9 @@
                     <h5>Rreth Uji Puka</h5>
                     <p>Furnizues kryesor i ujit të pijshëm në rajonin e Pukës. Angazhimi ynë është të sigurojmë ujë të pastër dhe cilësor për të gjithë komunitetin.</p>
                     <div class="social-icons mt-3">
-                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/p/Puka-Uj%25C3%25AB-Natyral-100066536656166" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/uji_puka/" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/watch?v=F67CPUVXKXA" class="text-white me-2"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
@@ -89,7 +91,7 @@
                 <div class="col-md-4">
                     <h5>Kontakt</h5>
                     <address class="mb-0">
-                        <p><i class="fas fa-map-marker-alt me-2"></i> Rruga Kryesore, Pukë, Shqipëri</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Pukë, Shqipëri</p>
                         <p><i class="fas fa-phone me-2"></i> +355 21 234 567</p>
                         <p><i class="fas fa-envelope me-2"></i> info@ujipuka.com</p>
                         <p><i class="fas fa-clock me-2"></i> E Hënë - E Premte: 08:00 - 16:00</p>
