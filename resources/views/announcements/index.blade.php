@@ -3,13 +3,22 @@
 @section('title', 'Njoftimet')
 
 @section('content')
-    <!-- Announcements Hero Section -->
-    <section class="hero text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Njoftimet</h1>
-            <p class="lead">Informacione të rëndësishme për komunitetin</p>
-        </div>
-    </section>
+<section class="hero text-center position-relative overflow-hidden" style="height: 40vh;">
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 z-n1">
+        <img src="{{ asset('images/background.png') }}" class="w-100 h-100" style="object-fit: cover;" alt="Uji Puka Background">
+    </div>
+
+    <!-- Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-50 z-0"></div>
+
+    <!-- Content -->
+    <div class="container position-relative z-1 text-white d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="display-4 fw-bold">Njoftime</h1>
+        <p class="lead">Informacione të rëndësishme për komunitetin</p>
+    </div>
+</section>
+
 
     <!-- Announcements List -->
     <section class="py-5">
@@ -45,34 +54,3 @@
     </section>
 @endsection
 
-<style>
-.announcement-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.announcement-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-.pagination {
-    gap: 5px;
-}
-
-.page-item.active .page-link {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-}
-
-.page-link {
-    color: #0d6efd;
-    border-radius: 4px;
-}
-
-.hero {
-    background-color: #f8f9fa;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-</style>

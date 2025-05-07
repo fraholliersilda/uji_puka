@@ -6,7 +6,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.9)), url('../images/water-bg.jpg');
+    /* background: linear-gradient(rgba(13, 110, 253, 1), rgba(13, 110, 253, 1)); */
     background-size: cover;
     background-position: center;
     color: white;
