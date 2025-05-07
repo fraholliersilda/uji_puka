@@ -105,6 +105,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.profile') ? 'active' : '' }}" href="{{ route('admin.profile') }}">
+                                <i class="fas fa-user-cog me-2"></i>Profili
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}" target="_blank">
                                 <i class="fas fa-external-link-alt me-2"></i> Vizito faqen
                             </a>

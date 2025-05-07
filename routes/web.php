@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminAnnouncementController;
 use App\Http\Controllers\Admin\AdminContactController;
+use App\Http\Controllers\Admin\AdminProfileController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -40,6 +41,11 @@ Auth::routes(['register' => false]);
 // Admin Routes
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Admin Profile
+    Route::get('/profile', [AdminProfileController::class, 'index'])->name('profile');
+    Route::put('/profile/update-email', [AdminProfileController::class, 'updateEmail'])->name('profile.update-email');
+    Route::put('/profile/update-password', [AdminProfileController::class, 'updatePassword'])->name('profile.update-password');
 
     // Admin Services
     Route::get('/services', [AdminServiceController::class, 'index'])->name('services.index');
