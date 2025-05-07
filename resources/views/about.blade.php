@@ -3,7 +3,6 @@
 @section('title', 'Rreth Nesh')
 
 @section('content')
-    <!-- About Hero -->
     <section class="hero text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Rreth Nesh</h1>

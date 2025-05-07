@@ -10,7 +10,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Merr shërbimet dhe njoftimet më të fundit për t'i shfaqur në faqen kryesore
         $services = Service::take(3)->get();
         $announcements = Announcement::latest()->take(3)->get();
 

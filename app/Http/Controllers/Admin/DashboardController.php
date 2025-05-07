@@ -31,10 +31,8 @@ class DashboardController extends Controller
         $announcementsCount = Announcement::count();
         $messagesCount = Contact::count();
 
-        // Get latest 5 announcements
         $latestAnnouncements = Announcement::latest('published_at')->take(5)->get();
 
-        // Get latest 5 contacts/messages
         $latestContacts = Contact::latest()->take(5)->get();
 
         return view('admin.dashboard', compact(

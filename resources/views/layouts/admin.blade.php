@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Full height sidebar styles */
         body, html {
             height: 100%;
         }
@@ -29,10 +26,9 @@
             overflow-y: auto;
         }
         main {
-            margin-left: 16.666667%; 
+            margin-left: 16.666667%;
         }
 
-        /* Sidebar links styling */
         #sidebar .nav-link {
             color: rgba(255, 255, 255, 0.85);
             padding: 0.75rem 1.25rem;
@@ -51,7 +47,6 @@
             font-weight: 500;
         }
 
-        /* User section */
         .user-section {
             padding: 1rem 1.25rem;
             color: #fff;
@@ -115,7 +110,6 @@
                         </li>
                     </ul>
 
-                    <!-- User section with direct logout button -->
                     <div class="user-section mt-auto">
                         <div class="d-flex align-items-center mb-2">
                             <i class="fas fa-user-circle fs-4 me-2"></i>
@@ -161,9 +155,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>

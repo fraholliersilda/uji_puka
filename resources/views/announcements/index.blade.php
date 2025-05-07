@@ -46,7 +46,6 @@
 @endsection
 
 <style>
-/* Custom styles for the announcement cards */
 .announcement-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -56,7 +55,6 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Pagination styling */
 .pagination {
     gap: 5px;
 }
@@ -71,7 +69,6 @@
     border-radius: 4px;
 }
 
-/* Hero section enhancement */
 .hero {
     background-color: #f8f9fa;
     padding-top: 80px;

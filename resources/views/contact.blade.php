@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Kontakt')
 @section('content')
-    <!-- Contact Hero -->
     <section class="hero text-center">
         <div class="container">
             <h1 class="display-4 fw-bold">Na Kontaktoni</h1>
@@ -95,9 +94,6 @@
                             <p class="card-text mb-2">
                                 <i class="fas fa-clock me-2 text-primary"></i> E Hënë - E Premte: 08:00 - 17:00
                             </p>
-                            {{-- <p class="card-text">
-                                <i class="fas fa-clock me-2 text-primary"></i> E Shtunë: 08:00 - 12:00
-                            </p> --}}
                         </div>
                     </div>
                 </div>
@@ -107,7 +103,6 @@
                 <div class="col-12">
                     <h3 class="mb-4">Na gjeni në hartë</h3>
                     <div class="map-container">
-                        <!-- Zëvendëso me Google Maps iframe ose një fotografi të vendndodhjes -->
                         <div class="ratio ratio-16x9">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23562.25764575489!2d19.891327371947706!3d42.04454112336723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1352c118e5881107%3A0x48095c7d67e20671!2sPuk%C3%AB%2C%20Albania!5e0!3m2!1sen!2s!4v1651234567890!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
